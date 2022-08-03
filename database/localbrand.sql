@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 02, 2022 lúc 11:40 AM
+-- Thời gian đã tạo: Th8 03, 2022 lúc 10:40 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -31,8 +31,18 @@ CREATE TABLE `customers` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(200) NOT NULL
+  `password` varchar(200) NOT NULL,
+  `phone_number` int(15) NOT NULL,
+  `address` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `customers`
+--
+
+INSERT INTO `customers` (`id`, `name`, `email`, `password`, `phone_number`, `address`) VALUES
+(1, 'hung', 'nguyenvanhung0297@gmail.com', '123', 961919603, 'hoang mai hn'),
+(2, 'tam ', 'nguyenquocvuong194731@gmail.com', '123', 0, '');
 
 -- --------------------------------------------------------
 
@@ -122,7 +132,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `manufacturers`
