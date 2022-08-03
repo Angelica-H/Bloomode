@@ -55,8 +55,8 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản người dùng</a>
                                 <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">Đăng nhập</a>
-                                    <a href="#" class="dropdown-item">Đăng ký</a>
+                                    <a href="signin.php" class="dropdown-item">Đăng nhập</a>
+                                    <a href="signup.php" class="dropdown-item">Đăng ký</a>
                                 </div>
                             </div>
                         </div>
