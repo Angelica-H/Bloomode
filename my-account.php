@@ -45,9 +45,9 @@ if (empty($_SESSION['id'])) {
                     <div class="navbar-nav mr-auto">
                         <a href="index.php" class="nav-item nav-link">Trang chủ</a>
                         <a href="product-list.php" class="nav-item nav-link">Sản phẩm</a>
-                        <a href="product-detail.php" class="nav-item nav-link">Chi tiết SP</a>
+                        <!-- <a href="product-detail.php" class="nav-item nav-link">Chi tiết SP</a> -->
                         <a href="cart.php" class="nav-item nav-link">Giỏ hàng</a>
-                        <a href="checkout.pho" class="nav-item nav-link">Kiểm tra lại</a>
+                        <!-- <a href="checkout.pho" class="nav-item nav-link">Kiểm tra lại</a> -->
                         <a href="my-account.php" class="nav-item nav-link">Tài khoản</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Thêm trang</a>
@@ -188,6 +188,13 @@ if (empty($_SESSION['id'])) {
                                 hãy chọn hình thức thanh toán phù hợp với quý khách hàng
                             </p>
                         </div>
+                        <?php
+                            $id = $_SESSION['id'];
+                            require 'admin/connect.php';
+                            $sql = "select * from customers where id ='$id'";
+                            $result = mysqli_query($connect, $sql);
+                            $each =  mysqli_fetch_array($result);
+                            ?>
                         <div class="tab-pane fade" id="address-tab" role="tabpanel" aria-labelledby="address-nav">
                             <h4>Địa chỉ</h4>
                             <div class="row">
@@ -199,24 +206,19 @@ if (empty($_SESSION['id'])) {
                                 </div>
                                 <div class="col-md-6">
                                     <h5>Địa chỉ vận chuyển</h5>
-                                    <p>chọn địa chỉ</p>
-                                    <p>SĐT: </p>
+                                    
+                                    <p>Nhập điạ chỉ </p><input type="text" >
+                                    <p>SĐT: <?php echo $each['phone_number'] ?> </p>
                                     <button class="btn">Sửa địa chỉ</button>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="account-tab" role="tabpanel" aria-labelledby="account-nav">
                             <h4>Chi tiết tài khoản</h4>
-                            <?php
-                            $id = $_SESSION['id'];
-                            require 'admin/connect.php';
-                            $sql = "select * from customers where id ='$id'";
-                            $result = mysqli_query($connect, $sql);
-                            $each =  mysqli_fetch_array($result);
-                            ?>
-                            <form action="process_update_user.php" method="POST">
+                            
+                            <form action="process_update_account.php" method="POST">
                                 <div class="row">
-
+                                        <input type="hidden"  name="id" value="<?php echo $each['id'] ?>">
                                     <div class="col-md-6">
                                         <input class="form-control" type="text" name="name" value="<?php echo $each['name'] ?>">
                                     </div>

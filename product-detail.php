@@ -39,9 +39,9 @@
                     <div class="navbar-nav mr-auto">
                         <a href="index.php" class="nav-item nav-link">Trang chủ</a>
                         <a href="product-list.php" class="nav-item nav-link">Sản phẩm</a>
-                        <a href="product-detail.php" class="nav-item nav-link">Chi tiết SP</a>
+                        <!-- <a href="product-detail.php" class="nav-item nav-link">Chi tiết SP</a> -->
                         <a href="cart.php" class="nav-item nav-link">Giỏ hàng</a>
-                        <a href="checkout.pho" class="nav-item nav-link">Kiểm tra lại</a>
+                        <!-- <a href="checkout.pho" class="nav-item nav-link">Kiểm tra lại</a> -->
                         <a href="my-account.php" class="nav-item nav-link">Tài khoản</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Thêm trang</a>
@@ -276,7 +276,7 @@
                         </div>
 
                         <div class="row align-items-center product-slider product-slider-3">
-                             <?php
+                            <?php
                             $id = $_GET['id'];
                             require 'admin/connect.php';
                             $sql = "select * from products
@@ -285,38 +285,38 @@
                             $pro = mysqli_fetch_array($result);
                             $row = $pro['manufacturer_id'];
                             $sql = "select * from products where manufacturer_id = $row ";
-                            $result = mysqli_query($connect, $sql); 
+                            $result = mysqli_query($connect, $sql);
                             ?>
-                            <?php foreach($result as $pro):?> <div class="col-lg-3">
-                          
-                                <div class="product-item">
-                                    <div class="product-title">
-                                        <a href="product-detail.php?id=<?php echo $pro['id'] ?>"><?php echo $pro['name']?></a>
-                                        <div class="ratting">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
+                            <?php foreach ($result as $pro) : ?> <div class="col-lg-3">
+
+                                    <div class="product-item">
+                                        <div class="product-title">
+                                            <a href="product-detail.php?id=<?php echo $pro['id'] ?>"><?php echo $pro['name'] ?></a>
+                                            <div class="ratting">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="product-image">
+                                            <a href="product-detail.php?id=<?php echo $pro['id'] ?>">
+                                                <img src="admin/products/photos/<?php echo $pro['image'] ?>">
+                                            </a>
+                                            <div class="product-action">
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                                <a href="product-detail.php?id=<?php echo $pro['id'] ?>"><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-price">
+                                            <h3><?php echo $pro['price'] ?><span>đ</span></h3>
+                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
                                         </div>
                                     </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.php?id=<?php echo $pro['id'] ?>">
-                                        <img src="admin/products/photos/<?php echo $pro['image']?>">
-                                        </a>
-                                        <div class="product-action">
-                                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                            <a href="product-detail.php?id=<?php echo $pro['id'] ?>"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-price">
-                                    <h3><?php echo $pro['price'] ?><span>đ</span></h3>
-                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
-                                    </div>
-                                </div>
-                              
-                            </div>  <?php endforeach ?>
+
+                                </div> <?php endforeach ?>
                             <!-- <div class="col-lg-3">
                                 <div class="product-item">
                                     <div class="product-title">
@@ -457,36 +457,46 @@
 
                     <div class="sidebar-widget widget-slider">
 
-                    
-                   
+                        <?php
+                        $id = $_GET['id'];
+                        require 'admin/connect.php';
+                        $sql = "select * from products
+                                where id != '$id'";
+                        $result = mysqli_query($connect, $sql);
+                        $pro = mysqli_fetch_array($result);
+                        $row = $pro['manufacturer_id'];
+                        $sql = "select * from products where manufacturer_id = $row ";
+                        $result = mysqli_query($connect, $sql);
+                        ?>
+
                         <div class="sidebar-slider normal-slider">
-                         <?php foreach($result as  $pro): ?> 
-                            <div class="product-item">
-                                <div class="product-title">
-                                    <a href="product-detail.php?id=<?php echo $pro['id'] ?>"><?php echo  $pro['name'] ?></a>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+                            <?php foreach ($result as  $pro) : ?>
+                                <div class="product-item">
+                                    <div class="product-title">
+                                        <a href="product-detail.php?id=<?php echo $pro['id'] ?>"><?php echo  $pro['name'] ?></a>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="product-image">
+                                        <a href="product-detail.php?id=<?php echo $pro['id'] ?>">
+                                            <img src="admin/products/photos/<?php echo  $pro['image'] ?>">
+                                        </a>
+                                        <div class="product-action">
+                                            <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                            <a href="product-detail.php?id=<?php echo $pro['id'] ?>"><i class="fa fa-search"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-price">
+                                        <h3><?php echo  $pro['price'] ?><span>đ</span></h3>
+                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
                                     </div>
                                 </div>
-                                <div class="product-image">
-                                    <a href="product-detail.php?id=<?php echo $pro['id'] ?>">
-                                    <img src="admin/products/photos/<?php echo  $pro['image']?>">
-                                    </a>
-                                    <div class="product-action">
-                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                        <a href="#"><i class="fa fa-heart"></i></a>
-                                        <a href="product-detail.php?id=<?php echo $pro['id'] ?>"><i class="fa fa-search"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-price">
-                                <h3><?php echo  $pro['price'] ?><span>đ</span></h3>
-                                    <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
-                                </div>
-                            </div>
                             <?php endforeach ?>
                             <!-- <div class="product-item">
                                     <div class="product-title">
@@ -553,14 +563,16 @@
     <div class="brand">
         <div class="container-fluid">
             <div class="brand-slider">
-                <div class="brand-item"><img src="img/brand-1.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-2.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-3.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-4.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-5.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-6.png" alt=""></div>
+                <?php
+                require 'admin/connect.php';
+                $sql = 'select * from manufacturers';
+                $result = mysqli_query($connect, $sql);
+                ?>
+                <?php foreach ($result as $each) : ?>
+                    <div class="brand-item"><img src="<?php echo $each['image'] ?>" height="100px" alt=""></div><?php endforeach ?>
             </div>
         </div>
+
     </div>
     <!-- Brand End -->
 

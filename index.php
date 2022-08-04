@@ -38,9 +38,9 @@
                         <div class="navbar-nav mr-auto">
                         <a href="#" class="nav-item nav-link">Trang chủ</a>
                             <a href="product-list.php" class="nav-item nav-link">Sản phẩm</a>
-                            <a href="product-detail.php" class="nav-item nav-link">Chi tiết SP</a>
+                            <!-- <a href="product-detail.php" class="nav-item nav-link">Chi tiết SP</a> -->
                             <a href="cart.php" class="nav-item nav-link">Giỏ hàng</a>
-                            <a href="checkout.pho" class="nav-item nav-link">Kiểm tra lại</a>
+                            <!-- <a href="checkout.pho" class="nav-item nav-link">Kiểm tra lại</a> -->
                             <a href="my-account.php" class="nav-item nav-link">Tài khoản</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Thêm trang</a>
@@ -187,7 +187,7 @@
                         $result=mysqli_query($connect,$sql);
                     ?>
                     <?php foreach($result as $each):?>
-                    <div class="brand-item"><img src="<?php echo $each['image'] ?>" alt=""></div><?php endforeach?>
+                    <div class="brand-item"><img src="<?php echo $each['image'] ?>" height="100px"alt=""></div><?php endforeach?>
                     <!-- <div class="brand-item"><img src="img/brand-2.png" alt=""></div>
                     <div class="brand-item"><img src="img/brand-3.png" alt=""></div>
                     <div class="brand-item"><img src="img/brand-4.png" alt=""></div>

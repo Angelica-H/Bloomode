@@ -40,9 +40,9 @@
                     <div class="navbar-nav mr-auto">
                         <a href="index.php" class="nav-item nav-link">Trang chủ</a>
                         <a href="product-list.php" class="nav-item nav-link">Sản phẩm</a>
-                        <a href="product-detail.php" class="nav-item nav-link">Chi tiết SP</a>
+                        <!-- <a href="product-detail.php" class="nav-item nav-link">Chi tiết SP</a> -->
                         <a href="cart.php" class="nav-item nav-link">Giỏ hàng</a>
-                        <a href="checkout.pho" class="nav-item nav-link">Kiểm tra lại</a>
+                        <!-- <a href="checkout.pho" class="nav-item nav-link">Kiểm tra lại</a> -->
                         <a href="my-account.php" class="nav-item nav-link">Tài khoản</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Thêm trang</a>
@@ -57,8 +57,8 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản người dùng</a>
                             <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Đăng nhập</a>
-                                <a href="#" class="dropdown-item">Đăng ký</a>
+                                <a href="signin.php" class="dropdown-item">Đăng nhập</a>
+                                <!-- <a href="#" class="dropdown-item">Đăng ký</a> -->
                             </div>
                         </div>
                     </div>
