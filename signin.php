@@ -174,7 +174,7 @@
 
 
                     <div class="login-form">
-                        <form action="process_signin.php" method="POST">
+                        <form action="login_form/process_signin.php" method="POST">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>E-mail</label>
@@ -186,7 +186,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="newaccount">
+                                        <input type="checkbox" class="custom-control-input" id="newaccount" name="remember">
                                         <label class="custom-control-label" for="newaccount">lưu thông tin đăng nhập</label>
                                     </div>
                                 </div>

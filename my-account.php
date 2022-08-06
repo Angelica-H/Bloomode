@@ -141,8 +141,26 @@ if (empty($_SESSION['id'])) {
 
                             <h5>xin chao <?php
                                             echo $_SESSION['name'];
-                                            ?></h5>
+                                            ?>
+                            </h5>
                             </p>
+                            <?php
+                            if (isset($_GET['error'])) {
+                            ?>
+                                <span style="color: red;">
+                                    <?php echo $_GET['error']  ?>
+                                </span>
+                            <?php } ?>
+
+                            <?php
+                            if (isset($_GET['success'])) {
+                            ?>
+                                <span style="color: green;">
+                                    <?php echo $_GET['success']  ?>
+                                </span>
+                            <?php } ?>
+
+
                         </div>
                         <div class="tab-pane fade" id="orders-tab" role="tabpanel" aria-labelledby="orders-nav">
                             <div class="table-responsive">
@@ -189,12 +207,12 @@ if (empty($_SESSION['id'])) {
                             </p>
                         </div>
                         <?php
-                            $id = $_SESSION['id'];
-                            require 'admin/connect.php';
-                            $sql = "select * from customers where id ='$id'";
-                            $result = mysqli_query($connect, $sql);
-                            $each =  mysqli_fetch_array($result);
-                            ?>
+                        $id = $_SESSION['id'];
+                        require 'admin/connect.php';
+                        $sql = "select * from customers where id ='$id'";
+                        $result = mysqli_query($connect, $sql);
+                        $each =  mysqli_fetch_array($result);
+                        ?>
                         <div class="tab-pane fade" id="address-tab" role="tabpanel" aria-labelledby="address-nav">
                             <h4>Địa chỉ</h4>
                             <div class="row">
@@ -206,8 +224,8 @@ if (empty($_SESSION['id'])) {
                                 </div>
                                 <div class="col-md-6">
                                     <h5>Địa chỉ vận chuyển</h5>
-                                    
-                                    <p>Nhập điạ chỉ </p><input type="text" >
+
+                                    <p>Nhập điạ chỉ </p><input type="text">
                                     <p>SĐT: <?php echo $each['phone_number'] ?> </p>
                                     <button class="btn">Sửa địa chỉ</button>
                                 </div>
@@ -215,10 +233,10 @@ if (empty($_SESSION['id'])) {
                         </div>
                         <div class="tab-pane fade" id="account-tab" role="tabpanel" aria-labelledby="account-nav">
                             <h4>Chi tiết tài khoản</h4>
-                            
-                            <form action="process_update_account.php" method="POST">
+
+                            <form action="login_form/process_update_account.php" method="POST">
                                 <div class="row">
-                                        <input type="hidden"  name="id" value="<?php echo $each['id'] ?>">
+                                    <input type="hidden" name="id" value="<?php echo $each['id'] ?>">
                                     <div class="col-md-6">
                                         <input class="form-control" type="text" name="name" value="<?php echo $each['name'] ?>">
                                     </div>
@@ -238,28 +256,31 @@ if (empty($_SESSION['id'])) {
                                         <button class="btn">cập nhật</button>
                                         <br><br>
                                     </div>
+
+                                </div>
+                                <h4>Đổi mật khẩu</h4>
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <input class="form-control" type="text" placeholder="Current Password" value="<?php echo $each['password'] ?>">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="New Password" name="newpw">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="Confirm Password" name="repw">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button class="btn">Lưu</button>
+                                    </div>
+                                </div>
                             </form>
-                        </div>
-                        <h4>Đổi mật khẩu</h4>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <input class="form-control" type="password" placeholder="Current Password">
-                            </div>
-                            <div class="col-md-6">
-                                <input class="form-control" type="text" placeholder="New Password">
-                            </div>
-                            <div class="col-md-6">
-                                <input class="form-control" type="text" placeholder="Confirm Password">
-                            </div>
-                            <div class="col-md-12">
-                                <button class="btn">Lưu</button>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- My Account End -->
     <!-- Footer Start -->

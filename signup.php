@@ -120,7 +120,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="register-form">
-                        <form action="process_signup.php" method="POST">
+                        <form action="login_form/process_signup.php" method="POST">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Tên</label>

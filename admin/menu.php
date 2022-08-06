@@ -3,7 +3,7 @@
     <li><a href="../products">Quản lý sản phẩm </a></li>
 
  </ul>
-<?php 
+ <?php 
         if(isset($_GET['error'])) {
     ?>
         <span style="color: red;">
@@ -18,4 +18,6 @@
             <?php echo $_GET['success']  ?>
         </span>
 <?php }?>
+
+
 

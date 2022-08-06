@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 03, 2022 lúc 10:40 AM
+-- Thời gian đã tạo: Th8 06, 2022 lúc 02:05 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -33,16 +33,17 @@ CREATE TABLE `customers` (
   `email` varchar(50) NOT NULL,
   `password` varchar(200) NOT NULL,
   `phone_number` int(15) NOT NULL,
-  `address` varchar(200) NOT NULL
+  `address` varchar(200) NOT NULL,
+  `token` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `customers`
 --
 
-INSERT INTO `customers` (`id`, `name`, `email`, `password`, `phone_number`, `address`) VALUES
-(1, 'hung', 'nguyenvanhung0297@gmail.com', '123', 961919603, 'hoang mai hn'),
-(2, 'tam ', 'nguyenquocvuong194731@gmail.com', '123', 0, '');
+INSERT INTO `customers` (`id`, `name`, `email`, `password`, `phone_number`, `address`, `token`) VALUES
+(1, 'hùng nguyen hung', 'nguyenvanhung0297@gmail.com', '321', 961919603, 'hoàng mai hà nội', NULL),
+(2, 'tam ', 'nguyenquocvuong194731@gmail.com', '123', 0, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,7 @@ CREATE TABLE `manufacturers` (
 --
 
 INSERT INTO `manufacturers` (`id`, `name`, `image`, `phone`, `address`) VALUES
-(4, 'Luis vuitton', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Louis_Vuitton_logo_and_wordmark.svg/1200px-Louis_Vuitton_logo_and_wordmark.svg.png', '', ''),
+(4, 'Luis vuitton', 'https://cocotodichvulogonhanh.files.wordpress.com/2019/02/louis-vuitton-monogram-logo-365x365.jpg', '', ''),
 (5, 'Gucci ', 'https://i.pinimg.com/564x/46/5f/bb/465fbbb978994d00a67c5c1d7c74ccdc.jpg', '', ''),
 (6, 'CHANEL', 'http://2.bp.blogspot.com/-Gv3uktl4Uws/VWdb2qk_RNI/AAAAAAAADvw/0nF_yhezKcI/s1600/chanel_logo.gif', '', ''),
 (7, 'DIOR', 'https://bloganchoi.com/wp-content/uploads/2020/12/my-pham-dior-3.jpg', '', ''),
