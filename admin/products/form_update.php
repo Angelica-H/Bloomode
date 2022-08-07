@@ -37,12 +37,12 @@
         mô tả
         <textarea name="description" ><?php echo $each['description'] ?></textarea>
         <br>
-        nhà sản xuấ
+        nhà sản xuất
         <select name="manufacturer_id">
             <?php foreach ($manufacturers as $manufacturers) : ?>
-                <option value="<?php echo $manufacturers['id'] ?>" <?php if ($each['manufacturer_id'] == $manufacturers['id']) { ?> selected <?php } ?>>
+                <option value="<?php echo $manufacturers['manufacturer_id'] ?>" <?php if ($each['manufacturer_id'] == $manufacturers['manufacturer_id']) { ?> selected <?php } ?>>
 
-                    <?php echo $manufacturers['name'] ?>
+                    <?php echo $manufacturers['manufacturer_name'] ?>
                 </option>
             <?php endforeach ?>
         </select>

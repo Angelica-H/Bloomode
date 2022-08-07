@@ -16,7 +16,7 @@
     $id = $_GET['id'];
 
     require '../connect.php';
-    $sql = "select * from manufacturers where id = '$id'";
+    $sql = "select * from manufacturers where manufacturer_id = '$id'";
     $result = mysqli_query($connect, $sql);
     $each =  mysqli_fetch_array($result);
     include '../menu.php'
@@ -24,9 +24,9 @@
   
 
     <form action="process_update.php" method="POST">
-        <input type="hidden" name="id" value="<?php echo $each['id'] ?>">
+        <input type="hidden" name="manufacturer_id" value="<?php echo $each['manufacturer_id'] ?>">
         Tên
-        <input type="text" name="name" value="<?php echo $each['name'] ?>">
+        <input type="text" name="manufacturer_name" value="<?php echo $each['manufacturer_name'] ?>">
         <br>
         Địa chỉ
         <input type="text" name="address" value="<?php echo $each['address'] ?>">
@@ -35,7 +35,7 @@
         <input type="text" name="phone" value="<?php echo $each['phone'] ?>">
         <br>
         Ảnh
-        <input type="text" name="image" value="<?php echo $each['image'] ?>">
+        <input type="text" name="manufacturer_image" value="<?php echo $each['manufacturer_image'] ?>">
         <br>
         <button>Sửa</button>
 

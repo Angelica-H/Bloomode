@@ -1,9 +1,4 @@
-<?php
-session_start();
-if (empty($_SESSION['id'])) {
-    header('location:signin.php?error=Đăng nhập đi bạn');
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,48 +28,11 @@ if (empty($_SESSION['id'])) {
 <body>
 
     <!-- Nav Bar Start -->
-    <div class="nav">
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-                <a href="#" class="navbar-brand">MENU</a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav mr-auto">
-                        <a href="index.php" class="nav-item nav-link">Trang chủ</a>
-                        <a href="product-list.php" class="nav-item nav-link">Sản phẩm</a>
-                        <!-- <a href="product-detail.php" class="nav-item nav-link">Chi tiết SP</a> -->
-                        <a href="cart.php" class="nav-item nav-link">Giỏ hàng</a>
-                        <!-- <a href="checkout.pho" class="nav-item nav-link">Kiểm tra lại</a> -->
-                        <a href="my-account.php" class="nav-item nav-link">Tài khoản</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Thêm trang</a>
-                            <div class="dropdown-menu">
-                                <a href="wishlist.html" class="dropdown-item active">Danh sách mong muốn</a>
-                                <a href="login.html" class="dropdown-item">Đăng nhập & Đăng ký</a>
-                                <a href="contact.html" class="dropdown-item">Liên hệ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="navbar-nav ml-auto">
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản người dùng</a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Đăng nhập</a>
-                                <a href="#" class="dropdown-item">Đăng ký</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
+    <?php include 'login_form/menu.php' ?>
     <!-- Nav Bar End -->
 
     <!-- Bottom Bar Start -->
-    <div class="bottom-bar">
+    <!-- <div class="bottom-bar">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-3">
@@ -104,7 +62,7 @@ if (empty($_SESSION['id'])) {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Bottom Bar End -->
 
     <!-- Breadcrumb Start -->
@@ -126,7 +84,7 @@ if (empty($_SESSION['id'])) {
                 <div class="col-md-3">
                     <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="dashboard-nav" data-toggle="pill" href="#dashboard-tab" role="tab"><i class="fa fa-tachometer-alt"></i>Bảng điều khiển</a>
-                        <a class="nav-link" id="orders-nav" data-toggle="pill" href="#orders-tab" role="tab"><i class="fa fa-shopping-bag"></i>Đặt hàng</a>
+                        <a class="nav-link" id="orders-nav" data-toggle="pill" href="#orders-tab" role="tab"><i class="fa fa-shopping-bag"></i>Giỏ hàng</a>
                         <a class="nav-link" id="payment-nav" data-toggle="pill" href="#payment-tab" role="tab"><i class="fa fa-credit-card"></i>Phương thức thanh toán</a>
                         <a class="nav-link" id="address-nav" data-toggle="pill" href="#address-tab" role="tab"><i class="fa fa-map-marker-alt"></i>Địa chỉ</a>
                         <a class="nav-link" id="account-nav" data-toggle="pill" href="#account-tab" role="tab"><i class="fa fa-user"></i>Chi tiết tài khoản</a>

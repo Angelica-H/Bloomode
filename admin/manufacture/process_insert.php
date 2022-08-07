@@ -10,7 +10,7 @@ $phone = $_POST['phone'];
 $image = $_POST['image'];
 
 require '../connect.php';
-$sql ="insert into manufacturers (name,address,phone,image) value ('$name','$address','$phone','$image')";
+$sql ="insert into manufacturers (manufacturer_name,address,phone,manufacturer_image) value ('$name','$address','$phone','$image')";
 
 mysqli_query($connect,$sql);
 mysqli_close($connect);

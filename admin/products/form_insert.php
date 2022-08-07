@@ -29,8 +29,8 @@
         nhà sản xuấ
             <select name="manufacturer_id">
             <?php foreach($result as $each): ?>
-                <option value="<?php echo $each['id']?>">
-                    <?php echo $each['name']?>
+                <option value="<?php echo $each['manufacturer_id']?>">
+                    <?php echo $each['manufacturer_name']?>
                 </option>
                 <?php endforeach?>
             </select>

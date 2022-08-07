@@ -27,44 +27,7 @@
 <body>
 
     <!-- Nav Bar Start -->
-    <div class="nav">
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-                <a href="#" class="navbar-brand">MENU</a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav mr-auto">
-                        <a href="index.php" class="nav-item nav-link">Trang chủ</a>
-                        <a href="product-list.php" class="nav-item nav-link">Sản phẩm</a>
-                        <!-- <a href="product-detail.php" class="nav-item nav-link">Chi tiết SP</a> -->
-                        <a href="cart.php" class="nav-item nav-link">Giỏ hàng</a>
-                        <!-- <a href="checkout.php" class="nav-item nav-link">Kiểm tra lại</a> -->
-                        <a href="my-account.php" class="nav-item nav-link">Tài khoản</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Thêm trang</a>
-                            <div class="dropdown-menu">
-                                <a href="wishlist.html" class="dropdown-item active">Danh sách mong muốn</a>
-                                <a href="login.html" class="dropdown-item">Đăng nhập & Đăng ký</a>
-                                <a href="contact.html" class="dropdown-item">Liên hệ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="navbar-nav ml-auto">
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tài khoản người dùng</a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Đăng nhập</a>
-                                <a href="#" class="dropdown-item">Đăng ký</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
+    <?php include 'login_form/menu.php' ?>
     <!-- Nav Bar End -->
 
     <!-- Bottom Bar Start -->
@@ -126,25 +89,36 @@
                                     <div class="col-md-4">
                                         <div class="product-search">
                                             <form>
-                                                <input type="text" value="Tìm kiếm" name="search">
+                                                <input type="text" placeholder="tìm kiếm" name="search">
                                                 <button><i class="fa fa-search"></i></button>
                                             </form>
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
+                                        <!-- <div class="filter-3">
+                                            <button class="dropdown-item" data-filter="all">Tất cả</button>
+                                            <button class="dropdown-item" data-filter="Gucci">Gucci</button>
+                                            <button class="dropdown-item" data-filter="Luis vuitton">Luis vuitton</button>
+                                            <button class="dropdown-item" data-filter="CHANEL">CHANEL</button>
+                                            <button class="dropdown-item" data-filter="DIOR">DIOR</button>
+                                            <button class="dropdown-item" data-filter="HERMÈS">HERMÈS</button>
+                                        </div> -->
                                         <div class="product-short">
                                             <div class="dropdown">
-                                                <div class="dropdown-toggle" data-toggle="dropdown">Bộ lọc</div>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a href="#" class="dropdown-item">SP mới nhất</a>
-                                                    <a href="#" class="dropdown-item">SP phổ biến</a>
-                                                    <a href="#" class="dropdown-item"> SP bán chạy</a>
+                                                <div class="dropdown-toggle" data-toggle="dropdown" id="filter-1">chọn thương hiệu</div>
+                                                <div class="dropdown-menu dropdown-menu-right filter-3" >
+                                                    <button class="dropdown-item" data-filter="all">Tất cả</button>
+                                                    <button class="dropdown-item" data-filter="Gucci">Gucci</button>
+                                                    <button class="dropdown-item" data-filter="Luis vuitton">Luis vuitton</button>
+                                                    <button class="dropdown-item" data-filter="CHANEL">CHANEL</button>
+                                                    <button class="dropdown-item" data-filter="DIOR">DIOR</button>
+                                                    <button class="dropdown-item" data-filter="HERMÈS">HERMÈS</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <!-- <div class="col-md-4">
                                         <div class="product-price-range">
                                             <div class="dropdown">
                                                 <div class="dropdown-toggle" data-toggle="dropdown">Sắp xếp</div>
@@ -156,29 +130,28 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
                         <?php
-                         require 'admin/connect.php';
+                        require 'admin/connect.php';
                         if (isset($_GET['search'])) {
                             $search = $_GET['search'];
-                            $sql = "select * from products where name like '%$search%' limit 6";
-                            
-                        }else{
-                            $sql = "select * from products 
-                            limit 6";
+                            $sql = "select * from products,manufacturers where name like '%$search%' and products.manufacturer_id=manufacturers.manufacturer_id ";
+                        } else {
+                            $sql = "select * from products,manufacturers where products.manufacturer_id=manufacturers.manufacturer_id";
                         }
 
-                        
+
                         $result = mysqli_query($connect, $sql);
-                        $each = mysqli_fetch_array($result);
+
                         ?>
                         <?php foreach ($result as $each) : ?>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-title">
+
+                            <div class="col-md-4 product-block" data-item="<?php echo $each['manufacturer_name'] ?>">
+                                <div class="product-item " >
+                                    <div class="product-title rounded-top">
                                         <a href="product-detail.php?id=<?php echo $each['id'] ?>"><?php echo $each['name'] ?></a>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
@@ -188,7 +161,7 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                     </div>
-                                    <div class="product-image">
+                                    <div class="product-image rounded">
                                         <a href="product-detail.html">
                                             <img src="admin/products/photos/<?php echo $each['image'] ?>">
                                         </a>
@@ -198,12 +171,13 @@
                                             <a href="product-detail.php?id=<?php echo $each['id'] ?>"><i class="fa fa-search"></i></a>
                                         </div>
                                     </div>
-                                    <div class="product-price">
+                                    <div class="product-price rounded-bottom">
                                         <h3><?php echo $each['price'] ?><span>đ</span></h3>
                                         <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
                                     </div>
                                 </div>
                             </div>
+
                         <?php endforeach ?>
                         <!-- <div class="col-md-4">
                                 <div class="product-item">
@@ -478,8 +452,8 @@
 
                         <div class="sidebar-slider normal-slider">
                             <?php foreach ($result as  $pro) : ?>
-                                <div class="product-item">
-                                    <div class="product-title">
+                                <div class="product-item ">
+                                    <div class="product-title rounded-top">
                                         <a href="product-detail.php?id=<?php echo $pro['id'] ?>"><?php echo  $pro['name'] ?></a>
                                         <div class="ratting">
                                             <i class="fa fa-star"></i>
@@ -499,7 +473,7 @@
                                             <a href="product-detail.php?id=<?php echo $pro['id'] ?>"><i class="fa fa-search"></i></a>
                                         </div>
                                     </div>
-                                    <div class="product-price">
+                                    <div class="product-price rounded-bottom">
                                         <h3><?php echo  $pro['price'] ?><span>đ</span></h3>
                                         <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
                                     </div>
@@ -677,6 +651,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/slick/slick.min.js"></script>
+    <script src="js/cartt.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
