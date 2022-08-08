@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -120,41 +119,46 @@
 
 
                         </div>
+                        <?php
+                        $cart = $_SESSION['cart'];
+                        $sum = 0;
+                        ?>
                         <div class="tab-pane fade" id="orders-tab" role="tabpanel" aria-labelledby="orders-nav">
                             <div class="table-responsive">
                                 <table class="table table-bordered">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th>STT</th>
+                                            <th>Ảnh</th>
                                             <th>Sản phẩm</th>
                                             <th>Giá</th>
-                                            <th>Tình trạng</th>
-                                            <th>Hành động</th>
+                                            <th>số lượng</th>
+                                            <th>thành tiền</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Tên SP</td>
-                                            <td>$99</td>
-                                            <td>Còn hàng</td>
-                                            <td><button class="btn">Xem</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Tên SP</td>
-                                            <td>$99</td>
-                                            <td>Còn hàng</td>
-                                            <td><button class="btn">Xem</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Tên SP</td>
-                                            <td>$99</td>
-                                            <td>Còn hàng</td>
-                                            <td><button class="btn">Xem</button></td>
-                                        </tr>
-                                    </tbody>
+                                    <?php foreach ($cart as $id => $each) : ?>
+                                        <tbody>
+
+                                            <tr>
+                                                <td><img height='100' src="admin/products/photos/<?php echo $each['image'] ?>"></td>
+                                                <td><?php echo $each['name'] ?></td>
+                                                <td><?php echo $each['price'] ?>đ</td>
+                                                <td><a href="update_quantity_in_cart.php?id=<?php echo $id ?>&type=decre">
+                                                        -
+                                                    </a>
+                                                    <?php echo $each['quantity'] ?>
+                                                    <a href="update_quantity_in_cart.php?id=<?php echo $id ?>&type=incre">
+                                                        +
+                                                    </a>
+                                                </td>
+                                                <td><?php
+                                                    $result = $each['price'] * $each['quantity'];
+                                                    echo $result;
+                                                    $sum += $result;
+                                                    ?></td>
+                                                <td><button class="btn">Xem</button></td>
+                                            </tr>
+                                        </tbody>
+                                    <?php endforeach ?>
                                 </table>
                             </div>
                         </div>

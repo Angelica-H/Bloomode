@@ -107,7 +107,7 @@
                                         <div class="product-short">
                                             <div class="dropdown">
                                                 <div class="dropdown-toggle" data-toggle="dropdown" id="filter-1">chọn thương hiệu</div>
-                                                <div class="dropdown-menu dropdown-menu-right filter-3" >
+                                                <div class="dropdown-menu dropdown-menu-right filter-3">
                                                     <button class="dropdown-item" data-filter="all">Tất cả</button>
                                                     <button class="dropdown-item" data-filter="Gucci">Gucci</button>
                                                     <button class="dropdown-item" data-filter="Luis vuitton">Luis vuitton</button>
@@ -150,7 +150,7 @@
                         <?php foreach ($result as $each) : ?>
 
                             <div class="col-md-4 product-block" data-item="<?php echo $each['manufacturer_name'] ?>">
-                                <div class="product-item " >
+                                <div class="product-item ">
                                     <div class="product-title rounded-top">
                                         <a href="product-detail.php?id=<?php echo $each['id'] ?>"><?php echo $each['name'] ?></a>
                                         <div class="ratting">
@@ -173,7 +173,10 @@
                                     </div>
                                     <div class="product-price rounded-bottom">
                                         <h3><?php echo $each['price'] ?><span>đ</span></h3>
-                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
+                                        <?php if (!empty($_SESSION['id'])) {
+                                        ?>
+                                            <a class="btn" href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -475,7 +478,10 @@
                                     </div>
                                     <div class="product-price rounded-bottom">
                                         <h3><?php echo  $pro['price'] ?><span>đ</span></h3>
-                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
+                                        <?php if (!empty($_SESSION['id'])) {
+                                        ?>
+                                            <a class="btn" href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             <?php endforeach ?>
