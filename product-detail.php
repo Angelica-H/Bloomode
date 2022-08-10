@@ -95,56 +95,65 @@
                             <div class="col-md-5">
                                 <div class="product-slider-single normal-slider">
                                     <img src="admin/products/photos/<?php echo $each['image'] ?>">
-                                    
+
                                 </div>
-                               
+
                             </div>
                             <div class="col-md-7">
-                                <div class="product-content">
-                                    <div class="title">
-                                        <h2><?php echo $each['name'] ?></h2>
-                                    </div>
-                                    <div class="ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="price">
-                                        <h4>Giá:</h4>
-                                        <p><?php echo number_format($each['price'], 0, ',', '.') ?>đ <span></span></p>
-                                    </div>
-                                    <div class="quantity">
+                                <form action="">
+                                    <div class="product-content">
+                                        <div class="title">
+                                            <h2><?php echo $each['name'] ?></h2>
+                                        </div>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="price">
+                                            <h4>Giá:</h4>
+                                            <p><?php echo number_format($each['price'], 0, ',', '.') ?>đ <span></span></p>
+                                        </div>
+                                        <!-- <div class="quantity">
                                         <h4>Số lượng:</h4>
                                         <div class="qty">
                                             <button class="btn-minus"><i class="fa fa-minus"></i></button>
                                             <input type="text" value="1">
                                             <button class="btn-plus"><i class="fa fa-plus"></i></button>
                                         </div>
-                                    </div>
-                                    <div class="p-size">
-                                        <h4>Size:</h4>
-                                        <div class="btn-group btn-group-sm">
+                                    </div> -->
+                                        <div class="p-size">
+                                            <h4>Size:</h4>
+                                            <!-- <div class="btn-group btn-group-sm">
                                             <button type="button" class="btn" value="s">S</button>
                                             <button type="button" class="btn" value="M">M</button>
                                             <button type="button" class="btn" value="L">L</button>
                                             <button type="button" class="btn" value="XL">XL</button>
+                                        </div> -->
+
+                                            <select name="size" class="form-select">
+                                                <option value="S">S</option>
+                                                <option value="M">M</option>
+                                                <option value="L">L</option>
+                                                <option value="XL">XL</option>
+                                            </select>
+                                        </div>
+                                        <div class="p-color">
+                                            <h4>Màu:</h4>
+                                            <div class="btn-group btn-group-sm">
+                                                <button type="button" class="btn" value="Trắng">Trắng</button>
+                                                <button type="button" class="btn" value="Đen">Đen</button>
+                                                <button type="button" class="btn" value="Xanh">Xanh</button>
+                                            </div>
+                                        </div>
+                                        <div class="action">
+                                            <a class="btn" href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                                            <a class="btn" href="#"><i class="fa fa-shopping-bag"></i>Mua ngay</a>
                                         </div>
                                     </div>
-                                    <div class="p-color">
-                                        <h4>Màu:</h4>
-                                        <div class="btn-group btn-group-sm">
-                                            <button type="button" class="btn" value="Trắng">Trắng</button>
-                                            <button type="button" class="btn" value="Đen" >Đen</button>
-                                            <button type="button" class="btn" value="Xanh">Xanh</button>
-                                        </div>
-                                    </div>
-                                    <div class="action">
-                                        <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
-                                        <a class="btn" href="#"><i class="fa fa-shopping-bag"></i>Mua ngay</a>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
