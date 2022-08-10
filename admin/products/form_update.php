@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php  
+ require'../check_admin_login.php'
+ ?><!DOCTYPE html>
 <html lang="en">
 
 <head>

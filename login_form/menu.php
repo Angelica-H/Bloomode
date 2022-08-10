@@ -14,17 +14,21 @@ session_start();
                     <a href="index.php" class="nav-item nav-link">Trang chủ</a>
                     <a href="product-list.php" class="nav-item nav-link">Sản phẩm</a>
                     <!-- <a href="product-detail.php" class="nav-item nav-link">Chi tiết SP</a> -->
-                    <a href="cart.php" class="nav-item nav-link">Giỏ hàng</a>
+                    <?php if (!empty($_SESSION['id'])) {
+                    ?>
+                        <a href="cart.php" class="nav-item nav-link">Giỏ hàng</a>
+                    <?php } ?>
+
                     <!-- <a href="checkout.pho" class="nav-item nav-link">Kiểm tra lại</a> -->
                     <!-- <a href="my-account.php" class="nav-item nav-link">Tài khoản</a> -->
-                    <div class="nav-item dropdown">
+                    <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Thêm trang</a>
                         <div class="dropdown-menu">
                             <a href="wishlist.html" class="dropdown-item">Danh sách mong muốn</a>
                             <a href="login.html" class="dropdown-item">Đăng nhập & Đăng ký</a>
                             <a href="contact.html" class="dropdown-item">Liên hệ</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="navbar-nav ml-auto">
                     <?php if (empty($_SESSION['id'])) { ?>
@@ -32,7 +36,7 @@ session_start();
                         <a href="signup.php" class="nav-item nav-link">Đăng ký</a>
                     <?php   } else { ?>
 
-                        <a href="cart.html" class="btn cart">
+                        <a href="cart.php" class="btn cart">
                             <i class="fa fa-shopping-cart"></i>
                             <span>(0)</span>
                         </a>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -314,12 +313,13 @@
                                 </div>
                             </div>
                             <div class="product-price rounded-bottom">
-                                <h3><?php echo $each['price'] ?><span>đ</span></h3>
-                                <?php if(!empty($_SESSION['id'])) {
+                                <h3><?php echo number_format($each['price'], 0, ',', '.') ?><span>đ</span></h3>
+                                <?php if (!empty($_SESSION['id'])) {
                                 ?>
-                                <a class="btn" href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
-                                <?php }?>
-                                
+                                    <a class="btn" href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                                <?php } else { ?>
+                                    <a class="btn" href="signin.php"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -490,8 +490,13 @@
                                 </div>
                             </div>
                             <div class="product-price rounded-bottom">
-                                <h3><?php echo $each['price'] ?><span>đ</span></h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
+                                <h3><?php echo number_format($each['price'], 0, ',', '.') ?><span>đ</span></h3>
+                                <?php if (!empty($_SESSION['id'])) {
+                                ?>
+                                    <a class="btn" href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                                <?php } else { ?>
+                                    <a class="btn" href="signin.php"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

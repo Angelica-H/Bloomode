@@ -1,4 +1,5 @@
 <?php
+require'../check_super_admin_login.php';
 
 if (empty($_POST['id'])) {
     header('location:form_update.php?error= chưa có thông tin tên');

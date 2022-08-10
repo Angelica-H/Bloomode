@@ -172,7 +172,7 @@
                                         </div>
                                     </div>
                                     <div class="product-price rounded-bottom">
-                                        <h3><?php echo $each['price'] ?><span>đ</span></h3>
+                                        <h3><?php echo number_format($each['price'], 0, ',', '.')  ?><span>đ</span></h3>
                                         <?php if (!empty($_SESSION['id'])) {
                                         ?>
                                             <a class="btn" href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
@@ -477,7 +477,7 @@
                                         </div>
                                     </div>
                                     <div class="product-price rounded-bottom">
-                                        <h3><?php echo  $pro['price'] ?><span>đ</span></h3>
+                                        <h3><?php echo number_format($pro['price'], 0, ',', '.')  ?><span>đ</span></h3>
                                         <?php if (!empty($_SESSION['id'])) {
                                         ?>
                                             <a class="btn" href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
@@ -549,13 +549,16 @@
     <!-- Brand Start -->
     <div class="brand">
         <div class="container-fluid">
+
             <div class="brand-slider">
-                <div class="brand-item"><img src="img/brand-1.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-2.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-3.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-4.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-5.png" alt=""></div>
-                <div class="brand-item"><img src="img/brand-6.png" alt=""></div>
+                <?php
+                require 'admin/connect.php';
+                $sql = 'select * from manufacturers';
+                $result = mysqli_query($connect, $sql);
+                ?>
+                <?php foreach ($result as $each) : ?>
+                    <div class="brand-item"><img src="<?php echo $each['manufacturer_image'] ?>" height="100px" alt=""></div><?php endforeach ?>
+
             </div>
         </div>
     </div>

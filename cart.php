@@ -119,7 +119,7 @@
                                                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                                                         <h6 class="mb-0"><?php
                                                                             $result = $each['price'] * $each['quantity'];
-                                                                            echo $result;
+                                                                            echo number_format($result, 0, ',', '.') ;
                                                                             $sum += $result;
                                                                             $count++;
                                                                             ?></h6>
@@ -162,9 +162,10 @@
                                                 <option value="4">Four</option>
                                             </select>
                                         </div> -->
-
+                                        <!-- echo number_format($each['price'], 0, ',', '.')  -->
                                         <h5 class="text-uppercase mb-3">Thông tin khách hàng</h5>
                                         <?php
+
                                         $id = $_SESSION['id'];
                                         require 'admin/connect.php';
                                         $sql = "select * from customers where id = '$id'";
@@ -202,7 +203,7 @@
                                             <div class="d-flex justify-content-between mb-5">
                                                 <h5 class="text-uppercase">Tổng tiền</h5>
                                                 <h5><?php if(isset($_SESSION['cart'])) {?>
-                                                    <?php echo $sum ?>
+                                                    <?php echo  number_format($sum, 0, ',', '.') ?>
                                                     <?php }else{?>
                                                         0
                                                         <?php } ?> 

@@ -1,4 +1,5 @@
-<?php 
+<?php require'../check_super_admin_login.php';
+
 if(empty($_POST['name'])){
     header('location:form_insert.php?error= chưa có thông tin tên');
     

@@ -113,7 +113,7 @@
                                     </div>
                                     <div class="price">
                                         <h4>Giá:</h4>
-                                        <p><?php echo $each['price'] ?>đ <span></span></p>
+                                        <p><?php echo number_format($each['price'], 0, ',', '.') ?>đ <span></span></p>
                                     </div>
                                     <div class="quantity">
                                         <h4>Số lượng:</h4>
@@ -263,7 +263,7 @@
                                             </div>
                                         </div>
                                         <div class="product-price">
-                                            <h3><?php echo $pro['price'] ?><span>đ</span></h3>
+                                            <h3><?php echo number_format($each['price'], 0, ',', '.') ?><span>đ</span></h3>
                                             <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
                                         </div>
                                     </div>
@@ -445,7 +445,7 @@
                                         </div>
                                     </div>
                                     <div class="product-price">
-                                        <h3><?php echo  $pro['price'] ?><span>đ</span></h3>
+                                        <h3><?php echo number_format($each['price'], 0, ',', '.') ?><span>đ</span></h3>
                                         <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
                                     </div>
                                 </div>
@@ -521,7 +521,7 @@
                 $result = mysqli_query($connect, $sql);
                 ?>
                 <?php foreach ($result as $each) : ?>
-                    <div class="brand-item"><img src="<?php echo $each['image'] ?>" height="100px" alt=""></div><?php endforeach ?>
+                    <div class="brand-item"><img src="<?php echo $each['manufacturer_image'] ?>" height="100px" alt=""></div><?php endforeach ?>
             </div>
         </div>
 
