@@ -264,7 +264,7 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><?php echo number_format($each['price'], 0, ',', '.') ?><span>đ</span></h3>
-                                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
+                                            <a class="btn" href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-shopping-cart"></i>Mua ngay</a>
                                         </div>
                                     </div>
 
@@ -446,7 +446,7 @@
                                     </div>
                                     <div class="product-price">
                                         <h3><?php echo number_format($each['price'], 0, ',', '.') ?><span>đ</span></h3>
-                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</a>
+                                        <a class="btn" href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-shopping-cart"></i>Mua ngay</a>
                                     </div>
                                 </div>
                             <?php endforeach ?>
