@@ -126,18 +126,18 @@
                                     <div class="p-size">
                                         <h4>Size:</h4>
                                         <div class="btn-group btn-group-sm">
-                                            <button type="button" class="btn">S</button>
-                                            <button type="button" class="btn">M</button>
-                                            <button type="button" class="btn">L</button>
-                                            <button type="button" class="btn">XL</button>
+                                            <button type="button" class="btn" value="s">S</button>
+                                            <button type="button" class="btn" value="M">M</button>
+                                            <button type="button" class="btn" value="L">L</button>
+                                            <button type="button" class="btn" value="XL">XL</button>
                                         </div>
                                     </div>
                                     <div class="p-color">
                                         <h4>Màu:</h4>
                                         <div class="btn-group btn-group-sm">
-                                            <button type="button" class="btn">Trắng</button>
-                                            <button type="button" class="btn">Đen</button>
-                                            <button type="button" class="btn">Xanh</button>
+                                            <button type="button" class="btn" value="Trắng">Trắng</button>
+                                            <button type="button" class="btn" value="Đen" >Đen</button>
+                                            <button type="button" class="btn" value="Xanh">Xanh</button>
                                         </div>
                                     </div>
                                     <div class="action">

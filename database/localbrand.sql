@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 09, 2022 lúc 12:19 PM
+-- Thời gian đã tạo: Th8 10, 2022 lúc 04:27 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `localbrand`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `level` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `email`, `password`, `level`) VALUES
+(3, 'admin', 'admin@gmail.com', '123', 0),
+(4, 'superadmin', 'sadmin@gmail.com', '123321', 1);
 
 -- --------------------------------------------------------
 
@@ -42,8 +64,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `email`, `password`, `phone_number`, `address`, `token`) VALUES
-(1, 'hùng nguyen hung', 'nguyenvanhung0297@gmail.com', '321', '961919603', 'hoàng mai hà nội', NULL),
-(2, 'tam ', 'nguyenquocvuong194731@gmail.com', '123', '0', '', NULL);
+(1, 'hùng nguyen hung', 'nguyenvanhung0297@gmail.com', '321', '961919603', 'hoàng mai hà nội', NULL);
 
 -- --------------------------------------------------------
 
@@ -92,10 +113,11 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `name_receiver`, `phone_receiver`, `address_receiver`, `status`, `created_at`, `total_price`) VALUES
-(1, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '0', '2022-08-08 19:48:26', 1200000),
-(2, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '0', '2022-08-08 20:00:07', 400000),
+(1, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '1', '2022-08-10 11:59:44', 1200000),
+(2, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '1', '2022-08-10 11:31:04', 400000),
 (3, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '0', '2022-08-08 20:01:29', 400000),
-(4, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '0', '2022-08-08 20:10:32', 200000);
+(4, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '0', '2022-08-08 20:10:32', 200000),
+(5, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '0', '2022-08-10 13:45:26', 1100000);
 
 -- --------------------------------------------------------
 
@@ -120,7 +142,9 @@ INSERT INTO `order_product` (`order_id`, `product_id`, `quantity`) VALUES
 (2, 10, 1),
 (2, 12, 1),
 (3, 11, 2),
-(4, 11, 1);
+(4, 11, 1),
+(5, 12, 4),
+(5, 15, 2);
 
 -- --------------------------------------------------------
 
@@ -157,6 +181,12 @@ INSERT INTO `products` (`id`, `name`, `image`, `price`, `description`, `manufact
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `customers`
@@ -197,6 +227,12 @@ ALTER TABLE `products`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
@@ -212,7 +248,7 @@ ALTER TABLE `manufacturers`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
