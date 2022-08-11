@@ -104,10 +104,10 @@
                                                     <div class="col-md-2 col-lg-2 col-xl-2">
                                                         <img height='100' src="admin/products/photos/<?php echo $each['image'] ?>">
                                                     </div>
-                                                    <div class="col-md-3 col-lg-3 col-xl-3">
+                                                    <div class="col-md-2 col-lg-2 col-xl-2">
                                                         <h6 class="text-black mb-0"><?php echo $each['name'] ?></h6>
                                                     </div>
-                                                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                                    <div class="col-md-1 col-lg-1 col-xl-1 d-flex">
                                                         <a href="update_quantity_in_cart.php?id=<?php echo $id ?>&type=decre">
                                                             -
                                                         </a>
@@ -116,10 +116,29 @@
                                                             +
                                                         </a>
                                                     </div>
-                                                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                                                    <!-- <div class="col-md-1 col-lg-2 col-xl-2 d-flex">
+
+                                                        <select name="size" class="form-select">
+                                                            
+                                                            <option value="S">S</option>
+                                                            <option value="M">M</option>
+                                                            <option value="L">L</option>
+                                                            <option value="XL">XL</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-1 col-lg-2 col-xl-2 d-flex">
+
+                                                        <select name="color" class="form-select">
+                                                            <option value="trắng">trắng</option>
+                                                            <option value="Đen">Đen</option>
+                                                            <option value="Xanh">Xanh</option>
+
+                                                        </select>
+                                                    </div> -->
+                                                    <div class="col-md-1 col-lg-1 col-xl-2 ">
                                                         <h6 class="mb-0"><?php
                                                                             $result = $each['price'] * $each['quantity'];
-                                                                            echo number_format($result, 0, ',', '.') ;
+                                                                            echo number_format($result, 0, ',', '.');
                                                                             $sum += $result;
                                                                             $count++;
                                                                             ?></h6>
@@ -202,16 +221,16 @@
 
                                             <div class="d-flex justify-content-between mb-5">
                                                 <h5 class="text-uppercase">Tổng tiền</h5>
-                                                <h5><?php if(isset($_SESSION['cart'])) {?>
-                                                    <?php echo  number_format($sum, 0, ',', '.') ?>
-                                                    <?php }else{?>
+                                                <h5><?php if (isset($_SESSION['cart'])) { ?>
+                                                        <?php echo  number_format($sum, 0, ',', '.') ?>
+                                                    <?php } else { ?>
                                                         0
-                                                        <?php } ?> 
+                                                    <?php } ?>
                                                     đ</h5>
                                             </div>
 
-                                            <button  class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Đặt hàng</button>
-                                            
+                                            <button class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Đặt hàng</button>
+
                                         </form>
                                     </div>
                                 </div>

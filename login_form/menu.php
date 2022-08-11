@@ -38,7 +38,7 @@ session_start();
 
                         <a href="cart.php" class="btn cart">
                             <i class="fa fa-shopping-cart"></i>
-                            <span>(0)</span>
+                            <span></span>
                         </a>
                         <a href="my-account.php" class="nav-item nav-link"><?php echo $_SESSION['name'] ?></a>
                         <a class="nav-link" href="signout.php"><i class="fa fa-sign-out-alt"></i>Đăng xuất</a>
