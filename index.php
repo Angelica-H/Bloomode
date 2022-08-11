@@ -13,13 +13,11 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
-
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="lib/slick/slick.css" rel="stylesheet">
     <link href="lib/slick/slick-theme.css" rel="stylesheet">
-
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -67,9 +65,33 @@
 
     <!-- Main Slider Start -->
     <div class="header">
+
+        <div class="header-slider normal-slider">
+            <div class="header-slider-item" style="margin: auto;">
+                <img src="//img.ltwebstatic.com/images3_ach/2022/06/16/1655364091a4d5f726f9ec3abe66e64a0283484685.webp" width="100%">
+                <!-- <div class="header-slider-caption">
+                                <p>Bloomode</p>
+                                <a class="btn" href="product-list.php"><i class="fa fa-shopping-cart"></i>Mua sắm ngay</a>
+                            </div> -->
+            </div>
+            <div class="header-slider-item" style="margin: auto;">
+                <img src="//img.ltwebstatic.com/images3_ach/2022/08/08/1659928201e4a689d5232f247f213e765fa34ec7ec.gif" width="100% " />
+                <!-- <div class="header-slider-caption">
+                                <p>Trong thời gian trái đất đang quay xung quanh mặt trời thì có nhiều người đang chật vật vì… không hề có GÌ ĐỂ MẶC HỚT</p>
+                                <a class="btn" href="product-list.ph"><i class="fa fa-shopping-cart"></i>Mua sắm ngay</a>
+                            </div> -->
+            </div>
+            <div class="header-slider-item" style="margin: auto;width:300px; height:300px; object-fit: cover;">
+                <img src="https://img.cdn.vncdn.io/nvn/ncdn/store/10067/bn/vn.jpg" width="100%" />
+                <!-- <div class="header-slider-caption">
+                                <p>Phái đẹp hiện đại – KHÔNG DẠI ĐỢI QUÀ</p>
+                                <a class="btn" href="product-list.ph"><i class="fa fa-shopping-cart"></i>Mua sắm ngay</a>
+                            </div> -->
+            </div>
+        </div>
+        <!-- <div class="row">
+                <div class="col-md-3"> 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3">
                     <nav class="navbar bg-light">
                         <ul class="navbar-nav">
                             <li class="nav-item">
@@ -99,23 +121,23 @@
                 <div class="col-md-6">
                     <div class="header-slider normal-slider">
                         <div class="header-slider-item">
-                            <img src="img/slider-1.jpg" alt="Slider Image" />
+                            <img src="img/category-1.jpg" alt="Slider Image" />
                             <div class="header-slider-caption">
-                                <p>Một số văn bản đi đến đây mô tả hình ảnh</p>
+                                <p>Bloomode</p>
                                 <a class="btn" href="product-list.php"><i class="fa fa-shopping-cart"></i>Mua sắm ngay</a>
                             </div>
                         </div>
                         <div class="header-slider-item">
                             <img src="img/slider-2.jpg" alt="Slider Image" />
                             <div class="header-slider-caption">
-                                <p>Một số văn bản đi đến đây mô tả hình ảnh</p>
+                                <p>Trong thời gian trái đất đang quay xung quanh mặt trời thì có nhiều người đang chật vật vì… không hề có GÌ ĐỂ MẶC HỚT</p>
                                 <a class="btn" href="product-list.ph"><i class="fa fa-shopping-cart"></i>Mua sắm ngay</a>
                             </div>
                         </div>
                         <div class="header-slider-item">
                             <img src="img/slider-3.jpg" alt="Slider Image" />
                             <div class="header-slider-caption">
-                                <p>Một số văn bản đi đến đây mô tả hình ảnh</p>
+                                <p>Phái đẹp hiện đại – KHÔNG DẠI ĐỢI QUÀ</p>
                                 <a class="btn" href="product-list.ph"><i class="fa fa-shopping-cart"></i>Mua sắm ngay</a>
                             </div>
                         </div>
@@ -137,8 +159,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> -->
+    </div>
     </div>
     <!-- Main Slider End -->
 
@@ -210,13 +232,13 @@
 
     <!-- Category Start-->
     <div class="category">
-        <div class="container-fluid">
+        <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3">
                     <div class="category-item ch-400">
                         <img src="img/category-3.jpg" />
                         <a class="category-name" href="">
-                            <p>Một số văn bản đi đến đây mô tả hình ảnh</p>
+                            <p>Linh hoạt cho mọi phong cách </p>
                         </a>
                     </div>
                 </div>
@@ -224,13 +246,13 @@
                     <div class="category-item ch-250">
                         <img src="img/category-4.jpg" />
                         <a class="category-name" href="">
-                            <p>Một số văn bản đi đến đây mô tả hình ảnh</p>
+                            <p>Vải gân đa năng với độ vừa thoải mái </p>
                         </a>
                     </div>
                     <div class="category-item ch-150">
                         <img src="img/category-5.jpg" />
                         <a class="category-name" href="">
-                            <p>Một số văn bản đi đến đây mô tả hình ảnh</p>
+                            <p>Mang lại sự thoải mái tối đa</p>
                         </a>
                     </div>
                 </div>
@@ -238,7 +260,7 @@
                     <div class="category-item ch-150">
                         <img src="img/category-6.jpg" />
                         <a class="category-name" href="">
-                            <p>Một số văn bản đi đến đây mô tả hình ảnh</p>
+                            <p>Chất liệu mềm mịm phong cách uyển chuyển</p>
                         </a>
                     </div>
                     <div class="category-item ch-250">
@@ -257,7 +279,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <!-- Category End-->
 
@@ -307,8 +329,12 @@
                                     <img src="admin/products/photos/<?php echo $each['image'] ?>">
                                 </a>
                                 <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                <?php if (!empty($_SESSION['id'])) {
+                                ?>
+                                    <a href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-cart-plus"></i></a>
+                                    <?php } else { ?>
+                                        <a href="signin.php"><i class="fa fa-cart-plus"></i></a>
+                                        <?php } ?>
                                     <a href="product-detail.php?id=<?php echo $each['id'] ?>"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
@@ -484,8 +510,12 @@
                                     <img src="admin/products/photos/<?php echo $each['image'] ?>">
                                 </a>
                                 <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
+                                <?php if (!empty($_SESSION['id'])) {
+                                ?>
+                                    <a href="add_to_cart.php?id=<?php echo $each['id'] ?>"><i class="fa fa-cart-plus"></i></a>
+                                    <?php } else { ?>
+                                        <a href="signin.php"><i class="fa fa-cart-plus"></i></a>
+                                        <?php } ?>
                                     <a href="product-detail.php?id=<?php echo $each['id'] ?>"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>

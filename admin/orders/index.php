@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	<link rel="stylesheet" href="../css/menu.css">
 </head>
 <body>
 <?php 
@@ -19,6 +20,8 @@ join customers
 on customers.id = orders.customer_id";
 $result = mysqli_query($connect,$sql);
 ?>
+<?php include'../menu.php' ?>
+<h1>Quản lý đơn hàng</h1>
 <table border="1" width="100%"> 
 	<tr>
 		<th>Mã</th>

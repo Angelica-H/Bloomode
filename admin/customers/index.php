@@ -23,7 +23,7 @@
     <!-- hien thi d lieu -->
     <?php
     include '../connect.php';
-    $sql = 'select * from manufacturers';
+    $sql = 'select * from customers';
     $result = mysqli_query($connect, $sql)
     ?>
     <!-- end hien thi  -->
@@ -33,9 +33,8 @@
         <tr>
             <th>Mã</th>
             <th>Tên</th>
-            <th>Địa chỉ</th>
-            <th>Phone</th>
-            <th>Ảnh</th>
+            <th>email</th><th>SDT</th>
+            <th>Password</th>
             <th>Sửa</th>
             <th>Xóa</th>
 
@@ -44,18 +43,18 @@
         <?php foreach ($result as $each) : ?>
             <!--  -->
             <tr>
-                <td> <?php echo $each['manufacturer_id'] ?></td>
-                <td> <?php echo $each['manufacturer_name'] ?></td>
-                <td> <?php echo $each['address'] ?></td>
-                <td> <?php echo $each['phone'] ?></td>
-                <td><img src="<?php echo $each['manufacturer_image'] ?>" height="100px"></td>
+                <td> <?php echo $each['id'] ?></td>
+                <td> <?php echo $each['name'] ?></td>
+                <td> <?php echo $each['email'] ?></td>
+                <td> <?php echo $each['phone_number'] ?></td>
+                <td> <?php echo $each['password'] ?></td>
                 <td>
-                    <a href="form_update.php?id=<?php echo $each['manufacturer_id'] ?> ">
+                    <a href="form_update.php?id=<?php echo $each['id'] ?> ">
                         Sửa
                     </a>
                 </td>
                 <td>
-                    <a href="delete.php?id=<?php echo $each['manufacturer_id'] ?>">
+                    <a href="delete.php?id=<?php echo $each['id'] ?>">
                         Xóa
                     </a>
                 </td>

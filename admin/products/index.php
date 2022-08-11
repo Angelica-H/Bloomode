@@ -9,7 +9,7 @@ require '../check_admin_login.php'
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  
+  <link rel="stylesheet" href="../css/menu.css">
 </head>
 
 <body>
@@ -21,6 +21,7 @@ require '../check_admin_login.php'
 
 
   ?>
+  
   <h1>quản lý sản phẩm </h1>
   <a href="form_insert.php">Thêm sản phẩm</a>
   <table border="1" width="100%">
