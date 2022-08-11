@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 10, 2022 lúc 04:27 PM
+-- Thời gian đã tạo: Th8 11, 2022 lúc 01:40 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -85,7 +85,7 @@ CREATE TABLE `manufacturers` (
 --
 
 INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_name`, `manufacturer_image`, `phone`, `address`) VALUES
-(4, 'Luis vuitton', 'https://cocotodichvulogonhanh.files.wordpress.com/2019/02/louis-vuitton-monogram-logo-365x365.jpg', '', ''),
+(4, 'Luis vuiton', 'https://cocotodichvulogonhanh.files.wordpress.com/2019/02/louis-vuitton-monogram-logo-365x365.jpg', '', ''),
 (5, 'Gucci', 'https://i.pinimg.com/564x/46/5f/bb/465fbbb978994d00a67c5c1d7c74ccdc.jpg', '', ''),
 (6, 'CHANEL', 'http://2.bp.blogspot.com/-Gv3uktl4Uws/VWdb2qk_RNI/AAAAAAAADvw/0nF_yhezKcI/s1600/chanel_logo.gif', '', ''),
 (7, 'DIOR', 'https://bloganchoi.com/wp-content/uploads/2020/12/my-pham-dior-3.jpg', '', ''),
@@ -117,7 +117,9 @@ INSERT INTO `orders` (`id`, `customer_id`, `name_receiver`, `phone_receiver`, `a
 (2, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '1', '2022-08-10 11:31:04', 400000),
 (3, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '0', '2022-08-08 20:01:29', 400000),
 (4, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '0', '2022-08-08 20:10:32', 200000),
-(5, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '0', '2022-08-10 13:45:26', 1100000);
+(5, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '0', '2022-08-10 13:45:26', 1100000),
+(6, 1, 'hùng nguyen hung', '961919603', 'hoàng mai hà nội', '0', '2022-08-10 14:56:40', 550000),
+(7, 1, 'Nguyễn Văn Hùng', '0961919603', 'hoàng mai hà nội', '0', '2022-08-11 06:01:50', 1350000);
 
 -- --------------------------------------------------------
 
@@ -144,7 +146,12 @@ INSERT INTO `order_product` (`order_id`, `product_id`, `quantity`) VALUES
 (3, 11, 2),
 (4, 11, 1),
 (5, 12, 4),
-(5, 15, 2);
+(5, 15, 2),
+(6, 9, 1),
+(6, 10, 1),
+(6, 15, 1),
+(7, 15, 1),
+(7, 19, 6);
 
 -- --------------------------------------------------------
 
@@ -236,7 +243,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `manufacturers`
@@ -248,7 +255,7 @@ ALTER TABLE `manufacturers`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
